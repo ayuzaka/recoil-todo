@@ -1,4 +1,5 @@
-import { snapshot_UNSTABLE, RecoilRoot } from 'recoil'
+// eslint-disable-next-line camelcase
+import { snapshot_UNSTABLE } from 'recoil'
 import { todoListStatsState } from './useStatesTodoList'
 import { todoListState, TodoItemType } from './useTodoList'
 

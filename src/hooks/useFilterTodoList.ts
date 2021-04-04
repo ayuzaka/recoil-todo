@@ -34,6 +34,7 @@ export const useFilterTodoList = () => {
 
   const updateFilter = useCallback((filterType: FilterType) => {
     setFilter(filterType)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return { filteredTodoList, filter, updateFilter }

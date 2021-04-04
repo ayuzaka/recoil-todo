@@ -26,6 +26,7 @@ export const useTodoList = () => {
         isComplete: false,
       },
     ])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const editItemText = useCallback(
@@ -37,6 +38,7 @@ export const useTodoList = () => {
 
       setTodoList(newTodoList)
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [todoList]
   )
 
@@ -48,6 +50,7 @@ export const useTodoList = () => {
       })
       setTodoList(newTodoList)
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [todoList]
   )
 
@@ -56,6 +59,7 @@ export const useTodoList = () => {
       const newTodoList = removeItemAtIndex(todoList, id)
       setTodoList(newTodoList)
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [todoList]
   )
 
