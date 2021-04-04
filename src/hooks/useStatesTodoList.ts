@@ -1,7 +1,7 @@
 import { selector, useRecoilValue } from 'recoil'
 import { todoListState } from './useTodoList'
 
-const todoListStatsState = selector({
+export const todoListStatsState = selector({
   key: 'todoListStatsState',
   get: ({ get }) => {
     const todoList = get(todoListState)

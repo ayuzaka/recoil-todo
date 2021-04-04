@@ -4,12 +4,12 @@ import { todoListState } from './useTodoList'
 
 export type FilterType = 'Show All' | 'Show Completed' | 'Show Uncompleted'
 
-const todoListFilterState = atom<FilterType>({
+export const todoListFilterState = atom<FilterType>({
   key: 'todoListFilterState',
   default: 'Show All',
 })
 
-const filteredTodoListState = selector({
+export const filteredTodoListState = selector({
   key: 'filteredTodoListState',
   get: ({ get }) => {
     const filter = get(todoListFilterState)
