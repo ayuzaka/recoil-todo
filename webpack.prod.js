@@ -6,7 +6,7 @@ const common = require('./webpack.common')
 const src = path.resolve(__dirname, 'src')
 const template = path.resolve(__dirname, 'template')
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
-  template: `${template}/development.html`,
+  template: `${template}/template.html`,
   filename: 'index.html',
   showErrors: true,
 })

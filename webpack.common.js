@@ -15,9 +15,4 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.mjs', '.wasm', '.json', '.jsx', '.css'],
   },
-
-  externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
-  },
 }
