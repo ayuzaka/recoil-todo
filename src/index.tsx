@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom'
 import { Reset } from 'styled-reset'
-import { App } from './components/App'
+import { App } from './App'
 
 ReactDOM.render(
   <>
