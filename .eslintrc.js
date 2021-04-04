@@ -20,7 +20,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'react-hooks', 'jest', 'jest-dom'],
+  plugins: ['react', '@typescript-eslint', 'react-hooks', 'jest', 'jest-dom', '@emotion'],
   rules: {
     'no-use-before-define': 'off',
     'no-restricted-syntax': [
@@ -62,5 +62,6 @@ module.exports = {
         depth: 2,
       },
     ],
+    '@emotion/pkg-renaming': 'error',
   },
 }
