@@ -1,6 +1,7 @@
 import { VFC, useState, ChangeEvent } from 'react'
 import { useTodoList } from '../hooks/useTodoList'
 import { Input } from './Atoms/Input'
+import { Button } from './Atoms/Button'
 
 type Props = {
   inputValue: string
@@ -11,9 +12,9 @@ type Props = {
 const Component: VFC<Props> = ({ inputValue, onChange, onClick }) => (
   <div>
     <Input type="text" value={inputValue} onChange={onChange} />
-    <button type="button" onClick={onClick}>
+    <Button onClick={onClick}>
       Add
-    </button>
+    </Button>
   </div>
 )
 
