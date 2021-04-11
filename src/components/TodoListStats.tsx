@@ -10,10 +10,10 @@ type Props = {
 
 const Component: VFC<Props> = ({ totalNum, totalCompletedNum, totalUncompletedNum, formattedPercentCompleted }) => (
   <ul>
-    <li>Total Item: {totalNum}</li>
-    <li>Items completed: {totalCompletedNum}</li>
-    <li>Items not completed: {totalUncompletedNum}</li>
-    <li>Percent completed: {formattedPercentCompleted}</li>
+    <li data-testid="totalItem">Total Item: {totalNum}</li>
+    <li data-testid="completedItem">Items completed: {totalCompletedNum}</li>
+    <li data-testid="uncompletedItem">Items not completed: {totalUncompletedNum}</li>
+    <li data-testid="percentCompleted">Percent completed: {formattedPercentCompleted}</li>
   </ul>
 )
 

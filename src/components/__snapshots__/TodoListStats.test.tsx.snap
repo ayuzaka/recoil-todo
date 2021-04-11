@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`初期状態 render 1`] = `
+<DocumentFragment>
+  <ul>
+    <li
+      data-testid="totalItem"
+    >
+      Total Item: 0
+    </li>
+    <li
+      data-testid="completedItem"
+    >
+      Items completed: 0
+    </li>
+    <li
+      data-testid="uncompletedItem"
+    >
+      Items not completed: 0
+    </li>
+    <li
+      data-testid="percentCompleted"
+    >
+      Percent completed: 0
+    </li>
+  </ul>
+</DocumentFragment>
+`;
