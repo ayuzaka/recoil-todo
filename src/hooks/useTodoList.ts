@@ -3,13 +3,7 @@ import { atom, useRecoilState } from 'recoil'
 import { v4 as uuidv4 } from 'uuid'
 import { removeItemAtIndex, replaceItemAtIndex } from '../utils/ArrayUtil'
 
-export type TodoItemType = {
-  id: string
-  text: string
-  isComplete: boolean
-}
-
-export const todoListState = atom<TodoItemType[]>({
+export const todoListState = atom<Todo.TodoItemType[]>({
   key: 'todoListState',
   default: [],
 })
@@ -30,7 +24,7 @@ export const useTodoList = () => {
   }, [])
 
   const editItemText = useCallback(
-    (item: TodoItemType, value: string) => {
+    (item: Todo.TodoItemType, value: string) => {
       const newTodoList = replaceItemAtIndex(todoList, item.id, {
         ...item,
         text: value,
@@ -43,7 +37,7 @@ export const useTodoList = () => {
   )
 
   const toggleItemCompletion = useCallback(
-    (item: TodoItemType) => {
+    (item: Todo.TodoItemType) => {
       const newTodoList = replaceItemAtIndex(todoList, item.id, {
         ...item,
         isComplete: !item.isComplete,

@@ -3,9 +3,9 @@ import React, { VFC, ReactNode } from 'react'
 import { snapshot_UNSTABLE, RecoilRoot } from 'recoil'
 import { renderHook, act, RenderResult } from '@testing-library/react-hooks'
 import { todoListFilterState, filteredTodoListState, useFilterTodoList } from './useFilterTodoList'
-import { todoListState, TodoItemType } from './useTodoList'
+import { todoListState  } from './useTodoList'
 
-const testTodoList: TodoItemType[] = [
+const testTodoList: Todo.TodoItemType[] = [
   { id: 'no1', text: 'uncompleted', isComplete: false },
   { id: 'no2', text: 'completed', isComplete: true },
 ]

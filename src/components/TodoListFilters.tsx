@@ -1,8 +1,8 @@
 import { ChangeEvent, VFC } from 'react'
-import { useFilterTodoList, FilterType } from '../hooks/useFilterTodoList'
+import { useFilterTodoList } from '../hooks/useFilterTodoList'
 
 type Props = {
-  filter: FilterType
+  filter: Todo.FilterType
   onChange: (event: ChangeEvent<HTMLSelectElement>) => void
 }
 
@@ -21,7 +21,7 @@ const Container: VFC = () => {
   const { filter, updateFilter } = useFilterTodoList()
 
   const onChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    updateFilter(event.target.value as FilterType)
+    updateFilter(event.target.value as Todo.FilterType)
   }
 
   return <Component {...{ filter, onChange }} />

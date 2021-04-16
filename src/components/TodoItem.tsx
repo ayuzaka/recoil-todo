@@ -1,16 +1,16 @@
 import { ChangeEvent, VFC } from 'react'
-import { useTodoList, TodoItemType } from '../hooks/useTodoList'
+import { useTodoList  } from '../hooks/useTodoList'
 import { TransparentButton } from './Atoms/Button'
 
 type Props = {
-  item: TodoItemType
+  item: Todo.TodoItemType
   onChangeInput: (event: ChangeEvent<HTMLInputElement>) => void
   onChangeCheck: () => void
   onClickDelete: () => void
 }
 
 type ContainerProps = {
-  item: TodoItemType
+  item: Todo.TodoItemType
 }
 
 const Component: VFC<Props> = ({ item, onChangeInput, onChangeCheck, onClickDelete }) => (

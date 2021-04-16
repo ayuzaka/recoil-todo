@@ -2,9 +2,7 @@ import { useCallback } from 'react'
 import { atom, selector, useRecoilState, useRecoilValue } from 'recoil'
 import { todoListState } from './useTodoList'
 
-export type FilterType = 'Show All' | 'Show Completed' | 'Show Uncompleted'
-
-export const todoListFilterState = atom<FilterType>({
+export const todoListFilterState = atom<Todo.FilterType>({
   key: 'todoListFilterState',
   default: 'Show All',
 })
@@ -32,7 +30,7 @@ export const useFilterTodoList = () => {
   const filteredTodoList = useRecoilValue(filteredTodoListState)
   const [filter, setFilter] = useRecoilState(todoListFilterState)
 
-  const updateFilter = useCallback((filterType: FilterType) => {
+  const updateFilter = useCallback((filterType: Todo.FilterType) => {
     setFilter(filterType)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

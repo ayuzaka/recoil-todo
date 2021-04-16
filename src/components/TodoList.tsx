@@ -1,5 +1,4 @@
 import { VFC } from 'react'
-import { TodoItemType } from '../hooks/useTodoList'
 import { useFilterTodoList } from '../hooks/useFilterTodoList'
 import { TodoItemCreator } from './TodoItemCreator'
 import { TodoItem } from './TodoItem'
@@ -7,7 +6,7 @@ import { TodoListFilters } from './TodoListFilters'
 import { TodoListStats } from './TodoListStats'
 
 type Props = {
-  todoList: TodoItemType[]
+  todoList: Todo.TodoItemType[]
 }
 
 const Component: VFC<Props> = ({ todoList }) => (
