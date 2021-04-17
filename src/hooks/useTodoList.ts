@@ -1,25 +1,37 @@
 import { useCallback } from 'react'
-import { atom, useRecoilState } from 'recoil'
+import { atom, selector, useRecoilState } from 'recoil'
 import { v4 as uuidv4 } from 'uuid'
 import { removeItemAtIndex, replaceItemAtIndex } from '../utils/ArrayUtil'
+import { customFetchJSON } from '../utils/Fetch'
+import { useFetchTodo } from './useFetchTodo'
 
 export const todoListState = atom<Todo.TodoItemType[]>({
   key: 'todoListState',
-  default: [],
+  default: selector({
+    key: 'todoListState/default',
+    get: async () => {
+      const res = await customFetchJSON<unknown, Todo.TodoItemType[]>('todo/list', 'GET')
+      if (res.type === 'failure') {
+        return []
+      }
+
+      return res.value
+    }
+  }),
 })
 
 export const useTodoList = () => {
   const [todoList, setTodoList] = useRecoilState(todoListState)
+  const { addTodo } = useFetchTodo()
 
-  const addItem = useCallback((inputValue: string) => {
-    setTodoList((currentTodoList) => [
-      ...currentTodoList,
-      {
-        id: uuidv4(),
-        text: inputValue,
-        isComplete: false,
-      },
-    ])
+  const addItem = useCallback(async (inputValue: string) => {
+    const newTodoItem = {
+      id: uuidv4(),
+      text: inputValue,
+      isComplete: false,
+    }
+    setTodoList((currentTodoList) => [...currentTodoList, newTodoItem])
+    await addTodo(newTodoItem)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

@@ -30,6 +30,7 @@ module.exports = {
         message: 'DO NOT DECLARE ENUM',
       },
     ],
+    'arrow-body-style': 'off',
     'import/extensions': 'off',
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': [

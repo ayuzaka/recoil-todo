@@ -1,10 +1,12 @@
-import { VFC } from 'react'
+import { VFC, Suspense } from 'react'
 import { RecoilRoot } from 'recoil'
 import { TodoList } from './components/TodoList'
 
 const Component: VFC = () => (
   <RecoilRoot>
-    <TodoList />
+    <Suspense fallback={<div>Loading...</div>}>
+      <TodoList />
+    </Suspense>
   </RecoilRoot>
 )
 
