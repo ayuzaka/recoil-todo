@@ -13,5 +13,5 @@ export const handlers = [
 
   rest.post<Todo.TodoItemType>('/todo/add', (req, res, ctx) => {
     return res(ctx.status(200), ctx.json({ code: 200, status: 'ok' }))
-  })
+  }),
 ]

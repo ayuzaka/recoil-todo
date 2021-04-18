@@ -12,9 +12,7 @@ type Props = {
 const Component: VFC<Props> = ({ inputValue, onChange, onClick }) => (
   <div>
     <Input type="text" value={inputValue} onChange={onChange} />
-    <Button onClick={onClick}>
-      Add
-    </Button>
+    <Button onClick={onClick}>Add</Button>
   </div>
 )
 

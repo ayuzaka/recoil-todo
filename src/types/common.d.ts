@@ -4,7 +4,7 @@ type Success<T> = {
 }
 
 type Failure<E> = {
-  type: 'failure',
+  type: 'failure'
   value: E
 }
 

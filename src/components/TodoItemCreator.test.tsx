@@ -1,26 +1,20 @@
+import { Suspense } from 'react'
 import { RecoilRoot } from 'recoil'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import { TodoItemCreator } from './TodoItemCreator'
 
 describe('初期状態', () => {
-  test('render', () => {
-    const { asFragment } = render(
-      <RecoilRoot>
-        <TodoItemCreator />
-      </RecoilRoot>
-    )
-    expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('テキストボックスには何も入力されていないこと', () => {
+  test('テキストボックスには何も入力されていないこと', async () => {
     render(
       <RecoilRoot>
-        <TodoItemCreator />
+        <Suspense fallback={<div>Loading...</div>}>
+          <TodoItemCreator />
+        </Suspense>
       </RecoilRoot>
     )
-    expect(screen.getByRole('textbox')).toHaveValue('')
+    await waitFor(() => expect(screen.getByRole('textbox')).toHaveValue(''))
   })
 })
 

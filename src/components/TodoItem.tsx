@@ -1,5 +1,5 @@
 import { ChangeEvent, VFC } from 'react'
-import { useTodoList  } from '../hooks/useTodoList'
+import { useTodoList } from '../hooks/useTodoList'
 import { TransparentButton } from './Atoms/Button'
 
 type Props = {
@@ -17,9 +17,7 @@ const Component: VFC<Props> = ({ item, onChangeInput, onChangeCheck, onClickDele
   <div>
     <input type="text" value={item.text} onChange={onChangeInput} />
     <input type="checkbox" checked={item.isComplete} onChange={onChangeCheck} />
-    <TransparentButton onClick={onClickDelete}>
-      X
-    </TransparentButton>
+    <TransparentButton onClick={onClickDelete}>X</TransparentButton>
   </div>
 )
 
