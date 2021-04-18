@@ -36,7 +36,7 @@ module.exports = {
     'import/no-extraneous-dependencies': [
       'error',
       {
-        devDependencies: ['**/*.test.tsx', '**/*.test.ts', '**/*.js'],
+        devDependencies: ['**/*.test.tsx', '**/*.test.ts', '**/*.js', '**/mocks/*'],
       },
     ],
     '@typescript-eslint/explicit-function-return-type': 'off',

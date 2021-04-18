@@ -48,6 +48,7 @@ module.exports = merge(common, {
   devServer: {
     historyApiFallback: true,
     hot: true,
+    contentBase: path.join(__dirname, 'public'),
   },
 
   plugins: [htmlWebpackPlugin],

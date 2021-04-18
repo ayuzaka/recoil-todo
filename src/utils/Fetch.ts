@@ -1,4 +1,4 @@
-const endpoint = 'http://localhost:3030'
+const endpoint = process.env.NODE_ENV === 'development' ? '/' : 'http://localhost:3030/'
 
 export type HttpMethod = 'GET' | 'POST'
 
@@ -14,7 +14,7 @@ export const customFetchJSON = async <Req, Res>(
   signal?: AbortSignal
 ): Promise<Success<Res> | Failure<FetchError>> => {
   try {
-    const response = await fetch(`${endpoint}/${url}`, {
+    const response = await fetch(`${endpoint}${url}`, {
       method,
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
