@@ -11,7 +11,8 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
   showErrors: true,
 })
 
-module.exports = merge(common, {
+/** @type {import('webpack').Configuration} */
+const config = {
   mode: 'development',
   devtool: 'eval-cheap-module-source-map',
 
@@ -52,4 +53,6 @@ module.exports = merge(common, {
   },
 
   plugins: [htmlWebpackPlugin],
-})
+}
+
+module.exports = merge(common, config)

@@ -3,7 +3,8 @@ const path = require('path')
 const src = path.resolve(__dirname, 'src')
 const dist = path.resolve(__dirname, 'dist')
 
-module.exports = {
+/** @type {import('webpack').Configuration} */
+const config = {
   entry: `${src}/index.tsx`,
 
   output: {
@@ -16,3 +17,5 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.mjs', '.wasm', '.json', '.jsx', '.css'],
   },
 }
+
+module.exports = config
