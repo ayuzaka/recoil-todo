@@ -1,9 +1,5 @@
 declare namespace Todo {
-  export type TodoItemType = {
-    id: string
-    text: string
-    isComplete: boolean
-  }
+  export type TodoItemType = import('./schema').TodoItem
 
-  export type FilterType = 'Show All' | 'Show Completed' | 'Show Uncompleted'
+  export type FilterType = import('./schema').FilterType
 }
