@@ -16,7 +16,7 @@ export const todoListState = atom<Todo.TodoItemType[]>({
       }
 
       return res.value
-    }
+    },
   }),
 })
 

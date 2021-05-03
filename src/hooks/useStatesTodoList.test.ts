@@ -1,7 +1,7 @@
 // eslint-disable-next-line camelcase
 import { snapshot_UNSTABLE } from 'recoil'
 import { todoListStatsState } from './useStatesTodoList'
-import { todoListState  } from './useTodoList'
+import { todoListState } from './useTodoList'
 
 const testTodoList: Todo.TodoItemType[] = [
   { id: 'no1', text: 'uncompleted', isComplete: false },
