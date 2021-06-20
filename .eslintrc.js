@@ -10,6 +10,7 @@ module.exports = {
     'plugin:import/typescript',
     'plugin:jest/recommended',
     'plugin:jest-dom/recommended',
+    'plugin:cypress/recommended',
     'prettier',
   ],
   parser: '@typescript-eslint/parser',
@@ -20,7 +21,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'react-hooks', 'jest', 'jest-dom', '@emotion'],
+  plugins: ['react', '@typescript-eslint', 'react-hooks', 'jest', 'jest-dom', '@emotion', 'cypress'],
   rules: {
     'no-use-before-define': 'off',
     'no-restricted-syntax': [
