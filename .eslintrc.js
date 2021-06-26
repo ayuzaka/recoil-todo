@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import('@typescript-eslint/experimental-utils').TSESLint.Linter.Config} */
+const config = {
   env: {
     browser: true,
     es2021: true,
@@ -66,4 +67,14 @@ module.exports = {
     ],
     '@emotion/pkg-renaming': 'error',
   },
+  overrides: [
+    {
+      files: ['cypress/**/*.ts'],
+      rules: {
+        'jest/expect-expect': 'off',
+      },
+    },
+  ],
 }
+
+module.exports = config
