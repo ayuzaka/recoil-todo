@@ -1,9 +1,10 @@
 import { VFC } from 'react'
-import { useFilterTodoList } from '../hooks/useFilterTodoList'
+import { FlexBox } from './Layout/FlexBox'
 import { TodoItemCreator } from './TodoItemCreator'
 import { TodoItem } from './TodoItem'
 import { TodoListFilters } from './TodoListFilters'
 import { TodoListStats } from './TodoListStats'
+import { useFilterTodoList } from '../hooks/useFilterTodoList'
 
 type Props = {
   todoList: Todo.TodoItemType[]
@@ -14,9 +15,11 @@ const Component: VFC<Props> = ({ todoList }) => (
     <TodoListStats />
     <TodoItemCreator />
     <TodoListFilters />
-    {todoList.map((item) => (
-      <TodoItem key={item.id} item={item} />
-    ))}
+    <FlexBox direction="column" gap={1}>
+      {todoList.map((item) => (
+        <TodoItem key={item.id} item={item} />
+      ))}
+    </FlexBox>
   </>
 )
 

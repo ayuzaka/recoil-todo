@@ -9,3 +9,5 @@ type Failure<E> = {
 }
 
 type Result<T, E> = Success<T> | Failure<E>
+
+type ValueOf<T> = T[keyof T]
