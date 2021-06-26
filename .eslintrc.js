@@ -74,6 +74,12 @@ const config = {
         'jest/expect-expect': 'off',
       },
     },
+    {
+      files: ['**/*.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+      },
+    },
   ],
 }
 
