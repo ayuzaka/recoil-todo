@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 
 type Props = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
-const Component = forwardRef<HTMLInputElement, Props>((props, ref) => <input {...props} ref={ref} />)
+const Component = forwardRef<HTMLInputElement, Props>((props, ref) => <input {...props} aria-label={props.name} ref={ref} />)
 
 const StyledComponent = styled(Component)`
   padding: 0.25em;

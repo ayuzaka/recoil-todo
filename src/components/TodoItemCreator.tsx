@@ -15,7 +15,7 @@ type Props = {
 
 const Component: VFC<Props> = ({ inputValue, error, onChange, onClick, className }) => (
   <div className={className}>
-    <Input type="text" value={inputValue} onChange={onChange} />
+    <Input type="text" value={inputValue} onChange={onChange} name="task" />
     <Button onClick={onClick}>Add</Button>
     <div>{error}</div>
   </div>
