@@ -30,10 +30,12 @@ export const useFilterTodoList = () => {
   const filteredTodoList = useRecoilValue(filteredTodoListState)
   const [filter, setFilter] = useRecoilState(todoListFilterState)
 
-  const updateFilter = useCallback((filterType: Todo.FilterType) => {
-    setFilter(filterType)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  const updateFilter = useCallback(
+    (filterType: Todo.FilterType) => {
+      setFilter(filterType)
+    },
+    [setFilter]
+  )
 
   return { filteredTodoList, filter, updateFilter }
 }

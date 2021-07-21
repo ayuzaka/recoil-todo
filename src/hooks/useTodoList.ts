@@ -24,16 +24,18 @@ export const useTodoList = () => {
   const [todoList, setTodoList] = useRecoilState(todoListState)
   const { addTodo } = useFetchTodo()
 
-  const addItem = useCallback(async (inputValue: string) => {
-    const newTodoItem = {
-      id: uuidv4(),
-      text: inputValue,
-      isComplete: false,
-    }
-    setTodoList((currentTodoList) => [...currentTodoList, newTodoItem])
-    await addTodo(newTodoItem)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  const addItem = useCallback(
+    async (inputValue: string) => {
+      const newTodoItem = {
+        id: uuidv4(),
+        text: inputValue,
+        isComplete: false,
+      }
+      setTodoList((currentTodoList) => [...currentTodoList, newTodoItem])
+      await addTodo(newTodoItem)
+    },
+    [addTodo, setTodoList]
+  )
 
   const editItemText = useCallback(
     (item: Todo.TodoItemType, value: string) => {
@@ -44,8 +46,7 @@ export const useTodoList = () => {
 
       setTodoList(newTodoList)
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [todoList]
+    [todoList, setTodoList]
   )
 
   const toggleItemCompletion = useCallback(
@@ -56,8 +57,7 @@ export const useTodoList = () => {
       })
       setTodoList(newTodoList)
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [todoList]
+    [todoList, setTodoList]
   )
 
   const deleteItem = useCallback(
@@ -65,8 +65,7 @@ export const useTodoList = () => {
       const newTodoList = removeItemAtIndex(todoList, id)
       setTodoList(newTodoList)
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [todoList]
+    [todoList, setTodoList]
   )
 
   return { todoList, addItem, editItemText, toggleItemCompletion, deleteItem }
