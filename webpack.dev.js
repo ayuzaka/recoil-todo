@@ -1,3 +1,6 @@
+const webpack = require('webpack')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const ReactRefreshTypescript = require('react-refresh-typescript')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 const { merge } = require('webpack-merge')
@@ -29,6 +32,10 @@ const config = {
               compilerOptions: {
                 jsx: 'react-jsxdev',
               },
+              getCustomTransformers: () => ({
+                before: [ReactRefreshTypescript()]
+              }),
+              transpileOnly: true,
             },
           },
         ],
@@ -52,7 +59,7 @@ const config = {
     contentBase: path.join(__dirname, 'public'),
   },
 
-  plugins: [htmlWebpackPlugin],
+  plugins: [htmlWebpackPlugin, new webpack.HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin()],
 }
 
 module.exports = merge(common, config)
