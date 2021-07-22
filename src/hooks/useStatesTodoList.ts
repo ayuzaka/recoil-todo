@@ -1,8 +1,9 @@
 import { selector, useRecoilValue } from 'recoil'
 import { todoListState } from './useTodoList'
+import { RecoilSelectorKeys } from '../storeKey'
 
 export const todoListStatsState = selector({
-  key: 'todoListStatsState',
+  key: RecoilSelectorKeys.todoListStatsState,
   get: ({ get }) => {
     const todoList = get(todoListState)
     const totalNum = todoList.length

@@ -1,14 +1,15 @@
 import { useCallback } from 'react'
 import { atom, selector, useRecoilState, useRecoilValue } from 'recoil'
 import { todoListState } from './useTodoList'
+import { RecoilAtomKeys, RecoilSelectorKeys } from '../storeKey'
 
 export const todoListFilterState = atom<Todo.FilterType>({
-  key: 'todoListFilterState',
+  key: RecoilAtomKeys.todoListFilterState,
   default: 'Show All',
 })
 
 export const filteredTodoListState = selector({
-  key: 'filteredTodoListState',
+  key: RecoilSelectorKeys.filteredTodoListState,
   get: ({ get }) => {
     const filter = get(todoListFilterState)
     const list = get(todoListState)

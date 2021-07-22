@@ -4,11 +4,12 @@ import { v4 as uuidv4 } from 'uuid'
 import { removeItemAtIndex, replaceItemAtIndex } from '../utils/ArrayUtil'
 import { customFetchJSON } from '../utils/Fetch'
 import { useFetchTodo } from './useFetchTodo'
+import { RecoilAtomKeys, RecoilSelectorKeys } from '../storeKey'
 
 export const todoListState = atom<Todo.TodoItemType[]>({
-  key: 'todoListState',
+  key: RecoilAtomKeys.todoListStateDefault,
   default: selector({
-    key: 'todoListState/default',
+    key: RecoilSelectorKeys.todoListStateDefault,
     get: async () => {
       const res = await customFetchJSON<unknown, Todo.TodoItemType[]>('todo/list', 'GET')
       if (res.type === 'failure') {
